@@ -1,0 +1,47 @@
+.car-item {
+    float: left;
+    background-color: rgb(233, 233, 233);
+    width: 250px;
+    height: 250px;
+    margin-right: 10px;
+}
+
+.car-item .car-header {
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+}
+
+.car-item h2 {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    color: #666;
+    margin-left: 15px;
+}
+
+.car-item .car-details {
+    height: 60px;
+    text-align: left;
+    display: flex;
+}
+
+.car-item p {
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    line-height: 60px;
+}
+
+.car-item .power {
+    margin-right: 45px;
+    margin-left: 10px;
+}
+
+.car-item .image-place {
+    width: 100%;
+    display: block;
+    height: 150px;
+    background: #4df0e2;
+}
