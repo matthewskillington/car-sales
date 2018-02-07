@@ -38,6 +38,20 @@
             </span>
     </div>
 
+
+    <div class="form-field">
+            <label>Type</label> <br/>
+            <div class="checkbox-collection" formGroupName="typeGroup">
+                <input class="form-control form-checkbox" type="checkbox" name="sports" value="sports" formControlName="sports">Sports <br>
+                <input class="form-control form-checkbox" type="checkbox" name="hatchback" value="hatchback" formControlName="hatchback">Hatchback <br>
+                <input class="form-control form-checkbox" type="checkbox" name="coupe" value="coupe" formControlName="coupe">Coupe <br>
+                <input class="form-control form-checkbox" type="checkbox" name="mpv" value="mpv" formControlName="mpv">MPV <br>
+            </div>
+            <span class="help-block"  *ngIf="(carForm.get('typeGroup').touched || carForm.get('typeGroup').dirty) && carForm.get('typeGroup').errors">
+                    <span *ngIf="carForm.get('typeGroup').errors.moreThanOne">You can only select one type</span>
+            </span>
+    </div>
+
     <div class="form-field">
             <label>Price</label>
             <input class="form-control" 
