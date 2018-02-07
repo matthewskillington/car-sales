@@ -3,5 +3,5 @@ export interface Car {
     model: string;
     bhp: number;
     price: number;
-    imageUrl: string;
+    imageUrl?: string;
 }

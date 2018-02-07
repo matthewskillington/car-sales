@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ValidatorFn } from '@angular/forms';
 import { AbstractControl } from '@angular/forms/src/model';
+import { CarList } from '../../data/car-list';
 
 function powerRange(min: number, max: number): ValidatorFn {
     return (c: AbstractControl): {[key: string]: boolean } | null => {
@@ -42,20 +43,19 @@ export class AddFormComponent implements OnInit {
         this.carForm = this.fb.group({
             manufacturer: ['', Validators.required, ],
             model: ['', Validators.required],
-            power: ['', [Validators.required, powerRange(10, 1000)]],
-            typeGroup: this.fb.group({
+            bhp: ['', [Validators.required, powerRange(10, 1000)]],
+            /*typeGroup: this.fb.group({
                 sports: false,
                 hatchback: false,
                 coupe: false,
                 mpv: false
-            },{validator: checkBoxValidation()}),
+            },{validator: checkBoxValidation()}),*/
             price: ['', Validators.required],
-            image: ['']
+            imageUrl: ['']
         });
     }
 
     save() {
-        console.log(this.carForm);
-        this.payload = 'Saved:' + JSON.stringify(this.carForm.value);
+        CarList.push(this.carForm.value);
     }
 }

@@ -29,6 +29,9 @@
     font-weight: 700;
     cursor: pointer;
 }
+.form-field .btn-primary:disabled {
+    opacity: 0.5;
+}
 
 .form-field .checkbox-collection {
     margin-top:5px;

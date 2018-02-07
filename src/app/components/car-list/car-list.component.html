@@ -1,0 +1,27 @@
+<div class="car-list">
+    <div class="car-item" *ngFor="let car of cars" (click)="onSelect(car)">
+    <div class="car-header">
+        <h2>{{car.manufacturer}} {{car.model}}</h2><br/>
+    </div>
+    
+    <div class="image-place">
+        <img src="{{car.imageUrl}}" height="150px" width="250px">
+    </div>
+
+    <div class="car-details">
+        <p class="power"><b>Power:</b> {{car.bhp}} bhp</p><br/>
+        <p class="price">{{car.price}}GBP</p>
+    </div>
+</div>
+</div>
+<div *ngIf="selectedCar">
+<h2>{{selectedCar.manufacturer}} {{selectedCar.model}} Details</h2>
+<div>
+    <label>manufacturer:
+    <input [(ngModel)]="selectedCar.manufacturer" placeholder="manufacturer">
+    </label>
+    <label>model:
+    <input [(ngModel)]="selectedCar.model" placeholder="model">
+    </label>
+</div>
+</div>

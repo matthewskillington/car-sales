@@ -30,16 +30,16 @@
             <label>Power</label>
             <input class="form-control" 
                     type="number"
-                    formControlName="power"
+                    formControlName="bhp"
                     >
-            <span class="help-block" *ngIf="(carForm.get('power').touched || carForm.get('power').dirty) && carForm.get('power').errors">
-                <span *ngIf="carForm.get('power').errors.required">Please enter the power output</span>
-                <span *ngIf="carForm.get('power').errors.range">Power output cannot be less than 10 or more than 1000</span>
+            <span class="help-block" *ngIf="(carForm.get('bhp').touched || carForm.get('bhp').dirty) && carForm.get('bhp').errors">
+                <span *ngIf="carForm.get('bhp').errors.required">Please enter the power output</span>
+                <span *ngIf="carForm.get('bhp').errors.range">Power output cannot be less than 10 or more than 1000</span>
             </span>
     </div>
 
 
-    <div class="form-field">
+    <!--<div class="form-field">
             <label>Type</label> <br/>
             <div class="checkbox-collection" formGroupName="typeGroup">
                 <input class="form-control form-checkbox" type="checkbox" name="sports" value="sports" formControlName="sports">Sports <br>
@@ -50,7 +50,7 @@
             <span class="help-block"  *ngIf="(carForm.get('typeGroup').touched || carForm.get('typeGroup').dirty) && carForm.get('typeGroup').errors">
                     <span *ngIf="carForm.get('typeGroup').errors.moreThanOne">You can only select one type</span>
             </span>
-    </div>
+    </div>-->
 
     <div class="form-field">
             <label>Price</label>
@@ -70,7 +70,7 @@
             <input class="form-control" 
                     type="text"
                     placeholder="./my-image-location"
-                    formControlName="image"
+                    formControlName="imageUrl"
                     >
             <span class="help-block">
     
@@ -80,10 +80,10 @@
     <div class="form-field">
         <span>
             <button class="btn btn-primary"
-                    type="submit">
+                    type="submit"
+                    [disabled]="!carForm.valid">
                 Save
             </button>
         </span>
     </div>
 </form>
-<span>{{payload}}</span>
