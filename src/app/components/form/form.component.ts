@@ -32,6 +32,7 @@ function checkBoxValidation(): ValidatorFn {
 
 export class AddFormComponent implements OnInit {
     carForm: FormGroup;
+    public payload: any;
 
     constructor(private fb: FormBuilder) {
 
@@ -55,6 +56,6 @@ export class AddFormComponent implements OnInit {
 
     save() {
         console.log(this.carForm);
-        console.log('Saved:' + JSON.stringify(this.carForm.value));
+        this.payload = 'Saved:' + JSON.stringify(this.carForm.value);
     }
 }

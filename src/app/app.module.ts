@@ -3,7 +3,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { CarComponent } from './components/car/car.component';
 import { CarListComponent } from './components/car-list/car-list.component';
 import { AddFormComponent } from './components/form/form.component';
 
@@ -25,7 +24,6 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    CarComponent,
     CarListComponent,
     AddFormComponent
   ],
