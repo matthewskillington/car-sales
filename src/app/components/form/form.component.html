@@ -1,0 +1,73 @@
+<form
+(ngSubmit)="save()"
+[formGroup]="carForm">
+    <div class="form-field">
+        <label>Manufacturer</label>
+        <input class="form-control" 
+               type="text"
+               placeholder="Manufacturer"
+               formControlName="manufacturer"
+               >
+        <span class="help-block">
+
+        </span>
+    </div>
+
+    <div class="form-field">
+            <label>Model</label>
+            <input class="form-control" 
+                   type="text"
+                   placeholder="Model"
+                   formControlName="model"
+                   >
+            <span class="help-block">
+    
+            </span>
+    </div>
+
+    <div class="form-field">
+            <label>Power</label>
+            <input class="form-control" 
+                    type="number"
+                    formControlName="power"
+                    >
+            <span class="help-block">
+    
+            </span>
+    </div>
+
+    <div class="form-field">
+            <label>Price</label>
+            <input class="form-control" 
+                    type="number"
+                    step="0.01"
+                    min="0.01"
+                    max="1000000"
+                    formControlName="price"
+                    >
+            <span class="help-block">
+    
+            </span>
+    </div>
+
+    <div class="form-field">
+            <label>Provide an image URL</label>
+            <input class="form-control" 
+                    type="text"
+                    placeholder="./my-image-location"
+                    formControlName="image"
+                    >
+            <span class="help-block">
+    
+            </span>
+    </div>
+
+    <div class="form-field">
+        <span>
+            <button class="btn btn-primary"
+                    type="submit">
+                Save
+            </button>
+        </span>
+    </div>
+</form>
