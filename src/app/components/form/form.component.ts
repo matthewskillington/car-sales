@@ -11,6 +11,18 @@ function powerRange(min: number, max: number): ValidatorFn {
     };
 }
 
+function checkBoxValidation(): ValidatorFn {
+    return (c: AbstractControl): {[key: string]: boolean } | null => {
+        var array = Object.values(c.value)
+        var numberChecked = array.filter(item => item === true).length;
+        if (numberChecked > 1) {
+            return {'moreThanOne': true};
+        }
+        return null;
+
+    };
+}
+
 @Component({
     selector: 'add-form',
     templateUrl: './form.component.html',
@@ -30,6 +42,12 @@ export class AddFormComponent implements OnInit {
             manufacturer: ['', Validators.required, ],
             model: ['', Validators.required],
             power: ['', [Validators.required, powerRange(10, 1000)]],
+            typeGroup: this.fb.group({
+                sports: false,
+                hatchback: false,
+                coupe: false,
+                mpv: false
+            },{validator: checkBoxValidation()}),
             price: ['', Validators.required],
             image: ['']
         });
