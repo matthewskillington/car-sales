@@ -1,12 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-
-  <div class="car-list">
-    <car manufacturer="Ford" model="Fiesta" bhp="100" price="2500" imageUrl="https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/hwAAAOSw42JZBhOp/$_86.JPG"></car>
-    <car manufacturer="Ford" model="Focus" bhp="225" price="4500" imageUrl="https://i.ytimg.com/vi/TXzwfE5Jkbg/maxresdefault.jpg"></car>
-  </div>
+  <nav>
+    <a routerLink="/car-list" routerLinkActive="active">Home</a>
+    <a routerLink="/form" routerLinkActive="active">Form</a>
+  </nav>
+  <router-outlet></router-outlet>
+  
 </div>
 
