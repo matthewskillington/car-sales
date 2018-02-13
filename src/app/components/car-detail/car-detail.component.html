@@ -8,11 +8,23 @@
         <div class="car-detail-information">
             <div class="car-detail-field">
                 <label>Manufacturer:</label>
-                <input [(ngModel)]="selectedCar.manufacturer" placeholder="manufacturer">
+                <input [(ngModel)]="selectedCar.manufacturer" placeholder="Manufacturer">
             </div>
             <div class="car-detail-field">
                 <label>Model:</label>
-                <input [(ngModel)]="selectedCar.model" placeholder="model">
+                <input [(ngModel)]="selectedCar.model" placeholder="Model">
+            </div>
+            <div class="car-detail-field">
+                <label>Power:</label>
+                <input [(ngModel)]="selectedCar.bhp" placeholder="BHP">
+            </div>
+            <div class="car-detail-field">
+                <label>Price:</label>
+                <input [(ngModel)]="selectedCar.price" placeholder="Price">
+            </div>
+            <div class="car-detail-field">
+                <label>Image:</label>
+                <input [(ngModel)]="selectedCar.imageUrl" placeholder="Image Url">
             </div>
             
             <button (click)="save()">Save</button>
