@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ValidatorFn } from '@angular/forms';
 import { AbstractControl } from '@angular/forms/src/model';
-import { CarList } from '../../data/car-list';
+import { CommService } from '../../communication.service';
 
 function powerRange(min: number, max: number): ValidatorFn {
     return (c: AbstractControl): {[key: string]: boolean } | null => {
@@ -27,7 +27,7 @@ function checkBoxValidation(): ValidatorFn {
 @Component({
     selector: 'add-form',
     templateUrl: './form.component.html',
-    styleUrls: ['./form.component.css']
+    styleUrls: ['./form.component.less']
 })
 
 
@@ -35,7 +35,7 @@ export class AddFormComponent implements OnInit {
     carForm: FormGroup;
     public payload: any;
 
-    constructor(private fb: FormBuilder) {
+    constructor(private fb: FormBuilder, private carService: CommService) {
 
     }
 
@@ -56,6 +56,5 @@ export class AddFormComponent implements OnInit {
     }
 
     save() {
-        CarList.push(this.carForm.value);
     }
 }

@@ -1,0 +1,23 @@
+<div class="car-detail-modal" *ngIf="open">
+    <div class="car-detail-modal--inner">
+        <div class="car-detail-modal--header">
+            <h2>{{selectedCar.manufacturer}} {{selectedCar.model}} Details</h2>
+            <span class="car-detail-close" (click)="toggleVisible()">X</span>
+        </div>
+        
+        <div class="car-detail-information">
+            <div class="car-detail-field">
+                <label>Manufacturer:</label>
+                <input [(ngModel)]="selectedCar.manufacturer" placeholder="manufacturer">
+            </div>
+            <div class="car-detail-field">
+                <label>Model:</label>
+                <input [(ngModel)]="selectedCar.model" placeholder="model">
+            </div>
+            
+            <button (click)="save()">Save</button>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,55 @@
+.message-component {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background: black;
+    height: 200px;
+    overflow: hidden;
+    padding: 8px;
+
+    .message-header {
+        height: 75px;
+
+        h2 {
+            font-size: 24px;
+            color: white;
+            float: left;
+        }
+        
+        .message-button-wrapper {
+            float: right;
+            margin-right: 20px;
+            margin-top: 25px;
+        
+            button {
+                color: white;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+        }   
+       
+    }
+    
+    .message {
+        color: #1af25e;
+        
+    }
+}
+
+.message-component-minified {
+    position: absolute;
+    bottom: 0;
+    background: black;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+
+    p {
+        font-size: 24px;
+        color: white;
+        font-weight: 800;
+        margin: 0;
+        margin-left: 8px;
+    }
+}

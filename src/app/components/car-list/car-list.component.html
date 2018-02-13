@@ -15,13 +15,5 @@
 </div>
 </div>
 <div *ngIf="selectedCar">
-<h2>{{selectedCar.manufacturer}} {{selectedCar.model}} Details</h2>
-<div>
-    <label>manufacturer:
-    <input [(ngModel)]="selectedCar.manufacturer" placeholder="manufacturer">
-    </label>
-    <label>model:
-    <input [(ngModel)]="selectedCar.model" placeholder="model">
-    </label>
-</div>
+<car-detail [selectedCar]="selectedCar"></car-detail>
 </div>

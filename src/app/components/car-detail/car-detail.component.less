@@ -1,0 +1,70 @@
+.car-detail-modal {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.85);
+    padding-top: 80px;
+
+
+    .car-detail-modal--inner {
+        background: white;
+        width: 70%;
+        height: 90%;
+        margin: 0px auto;
+
+        .car-detail-modal--header {
+            height: 50px;
+            background: #666;
+    
+            h2 {
+                margin: 0;
+                float: left;
+                font-size: 24px;
+                color: white;
+                padding: 8px 0 0 20px;
+            }
+    
+            .car-detail-close {
+                 color: white;
+                 float: right;
+                 padding: 14px 20px 0 0;
+                 font-weight: 800;
+                 cursor: pointer;
+                 
+            }
+        }
+
+        .car-detail-information {
+            
+            .car-detail-field {
+                float: left;
+                clear: both;
+                padding: 10px;
+
+                label {
+                    font-size: 18px;
+                    width: 150px;
+                    display: inline-block;
+                    text-align: left;
+                }
+
+                input {
+                    height: 38px;
+                    border: 1px solid #ccc;
+                    border-radius: 3px;
+                    padding: 0 10px;
+                }
+                
+                input:hover, input:focus {
+                    border: 1px solid #969696;
+                }
+            
+            }
+
+        }
+    }
+
+    
+}
