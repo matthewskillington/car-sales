@@ -13,7 +13,7 @@ export class CommService {
 
     }
 
-    private carsUrl = 'api/cars';
+    private carsUrl = 'http://localhost:3000/users/carlist';
 
     getCars(): Observable<Car[]> {
         this.log('fetched cars');
@@ -33,6 +33,7 @@ export class CommService {
         );
     }
 
+    /* Update a car by car */
     updateCar(car: Car): Observable<any> {
         const httpOptions = {
             headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -42,7 +43,18 @@ export class CommService {
             catchError(this.handleError<any>('updateCar'))
         );
     }
-
+    
+    /* Add a car */
+    addCar(Car: Car): Observable<Car> {
+        let carsUrl = 'http://localhost:3000/users/addcar';
+        const httpOptions = {
+            headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+        };
+        debugger;
+        return this.http.post<Car>(carsUrl, Car, httpOptions).pipe(
+            catchError(this.handleError<any>('addCar', Car))
+        )
+    }
 
     /** Log a HeroService message with the MessageService */
     private log(message: string) {

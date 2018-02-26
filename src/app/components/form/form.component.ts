@@ -56,5 +56,7 @@ export class AddFormComponent implements OnInit {
     }
 
     save() {
+        const car = {id: 1, manufacturer: 'Ford', model: 'Fiesta', bhp: 100, price: 2500, imageUrl: 'https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/hwAAAOSw42JZBhOp/$_86.JPG' }
+        this.carService.addCar(car);
     }
 }
