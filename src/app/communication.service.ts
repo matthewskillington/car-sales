@@ -35,11 +35,10 @@ export class CommService {
 
     /* Update a car by car */
     updateCar(car: any): Observable<any> {
-        //const carsUrl = this.carsUrl + '/' + car._id;
+        const carsUrl = this.carsUrl + '/' + car._id;
         const httpOptions = {
             headers: new HttpHeaders({ 'Content-Type': 'application/json' })
         };
-        const carsUrl = this.carsUrl + '/5a99366bacd4240f58120163';
         return this.http.put(carsUrl, car, httpOptions).pipe(
             tap(_=> this.log('updated car id=${car.manufacturer car.model}')),
             catchError(this.handleError<any>('updateCar'))
