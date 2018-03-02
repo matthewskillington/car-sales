@@ -8,17 +8,17 @@ import { CommService } from '../../communication.service';
 })
 
 export class CarDetailComponent {
-private _selectedCar: Car;
+private _selectedCar: any;
 
 private open: boolean = true;
 
-@Input() set selectedCar(value: Car) {
+@Input() set selectedCar(value: any) {
 
     this._selectedCar = value;
     this.reOpen();
 }
 
-get selectedCar(): Car {
+get selectedCar(): any {
     return this._selectedCar;
 }
 
@@ -31,8 +31,7 @@ reOpen (): void {
 }
 
 save(): void {
-    this.commService.updateCar(this.selectedCar)
-        //.subscribe(() => this.goBack();
+    this.commService.updateCar(this.selectedCar).subscribe();
 }
 
 toggleVisible(): void {

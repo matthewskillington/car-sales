@@ -11,7 +11,7 @@ import { CarDetailComponent } from '../car-detail/car-detail.component';
 
 export class CarListComponent {
 public cars;
-selectedCar: Car;
+selectedCar: any;
 
 constructor(private commService: CommService){
 
@@ -23,7 +23,7 @@ getCars(): void {
     this.commService.getCars().subscribe(cars => this.cars = cars);
 }
 
-onSelect(car: Car): void {
+onSelect(car: any): void {
     this.selectedCar = car;
     if(this.detail) {
         this.detail.reOpen();

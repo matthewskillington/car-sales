@@ -30,11 +30,11 @@
             <label>Power</label>
             <input class="form-control" 
                     type="number"
-                    formControlName="bhp"
+                    formControlName="power"
                     >
-            <span class="help-block" *ngIf="(carForm.get('bhp').touched || carForm.get('bhp').dirty) && carForm.get('bhp').errors">
-                <span *ngIf="carForm.get('bhp').errors.required">Please enter the power output</span>
-                <span *ngIf="carForm.get('bhp').errors.range">Power output cannot be less than 10 or more than 1000</span>
+            <span class="help-block" *ngIf="(carForm.get('power').touched || carForm.get('power').dirty) && carForm.get('power').errors">
+                <span *ngIf="carForm.get('power').errors.required">Please enter the power output</span>
+                <span *ngIf="carForm.get('power').errors.range">Power output cannot be less than 10 or more than 1000</span>
             </span>
     </div>
 

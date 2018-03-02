@@ -43,7 +43,7 @@ export class AddFormComponent implements OnInit {
         this.carForm = this.fb.group({
             manufacturer: ['', Validators.required, ],
             model: ['', Validators.required],
-            bhp: ['', [Validators.required, powerRange(10, 1000)]],
+            power: ['', [Validators.required, powerRange(10, 1000)]],
             /*typeGroup: this.fb.group({
                 sports: false,
                 hatchback: false,
@@ -56,7 +56,15 @@ export class AddFormComponent implements OnInit {
     }
 
     save() {
-        const car = {id: 1, manufacturer: 'Ford', model: 'Fiesta', bhp: 100, price: 2500, imageUrl: 'https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/hwAAAOSw42JZBhOp/$_86.JPG' }
-        this.carService.addCar(car);
+        let car = {
+            id: 7, 
+            manufacturer: this.carForm.value.manufacturer, 
+            model: this.carForm.value.model, 
+            power: this.carForm.value.power, 
+            price: this.carForm.value.price, 
+            imageUrl: this.carForm.value.imageUrl
+         }
+        debugger;
+        this.carService.addCar(car).subscribe();
     }
 }

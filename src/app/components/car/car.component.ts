@@ -2,7 +2,7 @@ export interface Car {
     id: number;
     manufacturer: string;
     model: string;
-    bhp: number;
+    power: number;
     price: number;
     imageUrl?: string;
 }

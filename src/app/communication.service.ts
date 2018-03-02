@@ -13,7 +13,7 @@ export class CommService {
 
     }
 
-    private carsUrl = 'http://localhost:3000/users/carlist';
+    private carsUrl = 'http://localhost:3000/cars';
 
     getCars(): Observable<Car[]> {
         this.log('fetched cars');
@@ -34,11 +34,13 @@ export class CommService {
     }
 
     /* Update a car by car */
-    updateCar(car: Car): Observable<any> {
+    updateCar(car: any): Observable<any> {
+        //const carsUrl = this.carsUrl + '/' + car._id;
         const httpOptions = {
             headers: new HttpHeaders({ 'Content-Type': 'application/json' })
         };
-        return this.http.put(this.carsUrl, car, httpOptions).pipe(
+        const carsUrl = this.carsUrl + '/5a99366bacd4240f58120163';
+        return this.http.put(carsUrl, car, httpOptions).pipe(
             tap(_=> this.log('updated car id=${car.manufacturer car.model}')),
             catchError(this.handleError<any>('updateCar'))
         );
@@ -46,11 +48,10 @@ export class CommService {
     
     /* Add a car */
     addCar(Car: Car): Observable<Car> {
-        let carsUrl = 'http://localhost:3000/users/addcar';
+        let carsUrl = 'http://localhost:3000/cars';
         const httpOptions = {
             headers: new HttpHeaders({ 'Content-Type': 'application/json' })
         };
-        debugger;
         return this.http.post<Car>(carsUrl, Car, httpOptions).pipe(
             catchError(this.handleError<any>('addCar', Car))
         )
