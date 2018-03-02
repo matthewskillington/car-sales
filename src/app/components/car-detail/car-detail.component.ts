@@ -34,6 +34,11 @@ save(): void {
     this.commService.updateCar(this.selectedCar).subscribe();
 }
 
+delete(): void {
+    this.commService.deleteCar(this.selectedCar).subscribe();
+    this.open = false;
+}
+
 toggleVisible(): void {
     if (this.open) {
         this.open = false;

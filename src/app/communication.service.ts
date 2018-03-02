@@ -44,6 +44,18 @@ export class CommService {
             catchError(this.handleError<any>('updateCar'))
         );
     }
+
+    /* Delete a car by car */
+    deleteCar(car: any): Observable<any> {
+        const carsUrl = this.carsUrl + '/' + car._id;
+        const httpOptions = {
+            headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+        };
+        return this.http.delete(carsUrl).pipe(
+            catchError(this.handleError<any>('deleteCar'))
+        )
+    }
+
     
     /* Add a car */
     addCar(Car: Car): Observable<Car> {
