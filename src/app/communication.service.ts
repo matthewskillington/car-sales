@@ -68,6 +68,21 @@ export class CommService {
         )
     }
 
+    /* Flood db with a bunch of test data */
+    floodDb(): void {
+        const cars = [
+            {id: 1, manufacturer: 'Ford', model: 'Fiesta', power: 100, price: 2500, imageUrl: 'https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/hwAAAOSw42JZBhOp/$_86.JPG' },
+            {id: 2, manufacturer: 'Ford', model: 'Focus', power: 225, price: 4500, imageUrl: 'https://i.ytimg.com/vi/TXzwfE5Jkbg/maxresdefault.jpg'},
+            {id: 3, manufacturer: 'Renault', model: 'Clio', power: 197, price: 3500, imageUrl: 'https://www.cliosport.net/attachments/8062347911_73c55f2fa5_z-jpg.1003864/'},
+            {id: 4, manufacturer: 'Vauxhall', model: 'Corsa', power: 192, price: 5000, imageUrl: 'https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/JyQAAOSwAANY7ngg/$_86.JPG'},
+            {id: 5, manufacturer: 'Volkswagen', model: 'Polo', power: 195, price: 13000, imageUrl: 'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/vw-polo-gti-2015-001.jpg?itok=vUPU0ETp'}
+            
+        ]
+        for (let i = 0; i < cars.length; i++){
+            this.addCar(cars[i]).subscribe();
+        }
+    }
+
     /** Log a HeroService message with the MessageService */
     private log(message: string) {
         this.messageService.add('CommService: ' + message);

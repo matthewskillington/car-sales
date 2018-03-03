@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MessageService } from '../../messages.service';
+import { CommService } from '../../communication.service';
 
 @Component({
     selector: 'app-messages',
@@ -13,6 +14,8 @@ import { MessageService } from '../../messages.service';
                         (click)="toggleVisible()">Hide</button>
                 <button class="clear"
                         (click)="messageService.clear()">Clear</button>
+                <button class="floodDb"
+                        (click)="carService.floodDb()">FloodDb</button>
             </div>
         </div>
 
@@ -32,7 +35,7 @@ import { MessageService } from '../../messages.service';
 export class MessagesComponent {
     private open: boolean = false;
 
-    constructor(public messageService: MessageService) {
+    constructor(public messageService: MessageService, private carService: CommService) {
 
     }
 
