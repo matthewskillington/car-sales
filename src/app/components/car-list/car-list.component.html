@@ -15,5 +15,5 @@
 </div>
 </div>
 <div *ngIf="selectedCar">
-<car-detail [selectedCar]="selectedCar"></car-detail>
+<car-detail [selectedCar]="selectedCar" (deletedCar)="getCars()"></car-detail>
 </div>

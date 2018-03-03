@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Car } from '../car/car.component';
 import { CommService } from '../../communication.service';
+
 @Component({
     selector: 'car-detail',
     templateUrl: './car-detail.component.html',
@@ -17,6 +18,8 @@ private open: boolean = true;
     this._selectedCar = value;
     this.reOpen();
 }
+
+@Output() deletedCar = new EventEmitter();
 
 get selectedCar(): any {
     return this._selectedCar;
@@ -35,7 +38,7 @@ save(): void {
 }
 
 delete(): void {
-    this.commService.deleteCar(this.selectedCar).subscribe();
+    this.commService.deleteCar(this.selectedCar).subscribe(() => this.deletedCar.emit(this.selectedCar));
     this.open = false;
 }
 

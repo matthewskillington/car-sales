@@ -64,7 +64,6 @@ export class AddFormComponent implements OnInit {
             price: this.carForm.value.price, 
             imageUrl: this.carForm.value.imageUrl
          }
-        debugger;
         this.carService.addCar(car).subscribe();
     }
 }
