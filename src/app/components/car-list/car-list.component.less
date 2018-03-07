@@ -1,7 +1,7 @@
 .car-item {
-    float: left;
+    display: inline-block;
     background-color: rgb(233, 233, 233);
-    width: 250px;
+    width: 19%;
     height: 250px;
     margin-right: 10px;
     overflow: hidden;
@@ -45,5 +45,33 @@
     width: 100%;
     display: block;
     height: 150px;
-    background: #4df0e2;
+    background-color: rgb(233, 233, 233);
+    overflow: hidden;
+    position: relative;
+
+    img {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        height: 220px;
+    
+    }
+}
+
+@media only screen and (max-width: 1120px) {
+    .car-item {
+        width: 24%;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .car-item {
+        width: 48%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .car-item {
+        width: 96%;
+    }
 }
