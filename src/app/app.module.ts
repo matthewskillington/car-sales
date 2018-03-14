@@ -10,8 +10,10 @@ import { CarListComponent } from './components/car-list/car-list.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { AddFormComponent } from './components/form/form.component';
 import { MessagesComponent } from './components/messages/messages.component';
-import { CommService} from './communication.service';
-import { MessageService } from './messages.service';
+import { LoginComponent } from './components/login/login.component';
+
+import { CommService} from './services/communication.service';
+import { MessageService } from './services/messages.service';
 
 const appRoutes: Routes = [
   { path: 'form', component: AddFormComponent },
@@ -25,6 +27,7 @@ const appRoutes: Routes = [
     redirectTo: '/car-list',
     pathMatch: 'full'
   },
+  { path: 'login', component: LoginComponent }
 
 ];
 
@@ -34,7 +37,8 @@ const appRoutes: Routes = [
     CarListComponent,
     CarDetailComponent,
     AddFormComponent,
-    MessagesComponent
+    MessagesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

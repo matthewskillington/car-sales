@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ValidatorFn } from '@angular/forms';
 import { AbstractControl } from '@angular/forms/src/model';
-import { CommService } from '../../communication.service';
+import { CommService } from '../../services/communication.service';
 
 function powerRange(min: number, max: number): ValidatorFn {
     return (c: AbstractControl): {[key: string]: boolean } | null => {

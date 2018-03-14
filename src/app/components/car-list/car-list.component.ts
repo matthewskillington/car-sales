@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Car } from './../car/car.component';
-import { CommService } from '../../communication.service';
+import { CommService } from '../../services/communication.service';
 import { CarDetailComponent } from '../car-detail/car-detail.component';
 
 @Component({

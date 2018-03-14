@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Car } from '../car/car.component';
-import { CommService } from '../../communication.service';
+import { CommService } from '../../services/communication.service';
 
 @Component({
     selector: 'car-detail',
