@@ -1,3 +1,8 @@
 <div class="login-interface">
-
+    <div class="login-form" #loginForm>
+        <input type="text" name="username" placeholder="username" class="login-username" autocomplete="off">
+        <input type="password" name="password" placeholder="password" class="login-password" autocomplete="off">
+        <span class="login-error" *ngIf="error">The provided login details are incorrect.</span>
+        <button type="submit" (click)="attemptLogin()">Login</button>
+    </div>
 </div>

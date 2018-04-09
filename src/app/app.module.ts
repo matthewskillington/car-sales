@@ -14,6 +14,7 @@ import { LoginComponent } from './components/login/login.component';
 
 import { CommService} from './services/communication.service';
 import { MessageService } from './services/messages.service';
+import { FakeLoginService } from './services/fake-login.service';
 
 const appRoutes: Routes = [
   { path: 'form', component: AddFormComponent },
@@ -49,10 +50,10 @@ const appRoutes: Routes = [
       appRoutes,
     )
   ],
-  providers: [CommService, MessageService],
+  providers: [CommService, MessageService, FakeLoginService],
   bootstrap: [
     AppComponent,
-    MessagesComponent
+    MessagesComponent,
   ]
 })
 export class AppModule { }

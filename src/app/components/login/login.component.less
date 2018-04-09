@@ -2,4 +2,67 @@
     height: 100%;
     width: 100%;
     background: #666;
+
+    .login-form {
+        width: 350px;
+        height: 300px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+
+        .login-error {
+            float: left;
+            color: #fff;
+            padding-bottom: 10px;
+        }
+
+        input {
+            height: 40px;
+            background: transparent;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: block;
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #fff;
+            padding-left: 10px;
+            width: ~"calc(100% - 10px)";
+
+            
+            &:hover, &:active, &:focus {
+                border: 1px solid #0ad8a1;
+            }
+            &:focus {
+                outline: none;
+            }
+            
+        }
+
+        ::placeholder {
+            color: #ccc;
+        }
+
+        button {
+            float: left;
+            width: 100%;
+            height: 40px;
+            background: #0ad8a1;
+            border: none;
+            color: #fff;
+            font-weight: 600px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover, &:active, &:focus {
+                background: #0bf3b5;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+    }
 }
