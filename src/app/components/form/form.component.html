@@ -1,3 +1,6 @@
+<div class="new-car-header">
+        <h2>Add a new car</h2>
+</div>
 <form
 (ngSubmit)="save()"
 [formGroup]="carForm">
@@ -31,6 +34,7 @@
             <input class="form-control" 
                     type="number"
                     formControlName="power"
+                    placeholder="Power"
                     >
             <span class="help-block" *ngIf="(carForm.get('power').touched || carForm.get('power').dirty) && carForm.get('power').errors">
                 <span *ngIf="carForm.get('power').errors.required">Please enter the power output</span>
@@ -59,6 +63,7 @@
                     min="10"
                     max="1000000"
                     formControlName="price"
+                    placeholder="Price"
                     >
             <span class="help-block" *ngIf="(carForm.get('price').touched || carForm.get('price').dirty) && carForm.get('price').errors">
                     <span *ngIf="carForm.get('price').errors.required">Please enter the price</span>
