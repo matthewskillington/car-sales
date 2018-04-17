@@ -1,7 +1,7 @@
 <div class="car-list">
     <div class="car-item" *ngFor="let car of cars" (click)="onSelect(car)">
     <div class="car-header">
-        <h2>{{car.manufacturer}} {{car.model}}</h2><br/>
+        
     </div>
     
     <div class="image-place">
@@ -9,8 +9,9 @@
     </div>
 
     <div class="car-details">
-        <p class="power"><b>Power:</b> {{car.power}} bhp</p><br/>
-        <p class="price">{{car.price}}GBP</p>
+        <h2>{{car.manufacturer}} {{car.model}}</h2><br/>
+        <!--<p class="power"><b>Power:</b> {{car.power}} bhp</p>-->
+        <p class="price">£{{car.price}}</p>
     </div>
 </div>
 </div>
