@@ -11,6 +11,7 @@ import { CarDetailComponent } from './components/car-detail/car-detail.component
 import { AddFormComponent } from './components/form/form.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { LoginComponent } from './components/login/login.component';
+import { AdminDashboardComponent } from './components/dashboard/admin-dashboard.component';
 
 import { CommService} from './services/communication.service';
 import { MessageService } from './services/messages.service';
@@ -39,7 +40,8 @@ const appRoutes: Routes = [
     CarDetailComponent,
     AddFormComponent,
     MessagesComponent,
-    LoginComponent
+    LoginComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,

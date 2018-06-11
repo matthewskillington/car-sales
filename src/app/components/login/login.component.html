@@ -1,12 +1,14 @@
-<div class="login-interface">
+<div class="login-interface" *ngIf="!loggedIn">
     <div class="login-form" #loginForm *ngIf="!loggedIn">
         <input type="text" name="username" placeholder="username" class="login-username" autocomplete="off">
         <input type="password" name="password" placeholder="password" class="login-password" autocomplete="off">
         <span class="login-error" *ngIf="error">The provided login details are incorrect.</span>
         <button type="submit" (click)="attemptLogin()">Login</button>
     </div>
-    <div class="login-form" *ngIf="loggedIn">
-        <span class="login-success">You are logged in as {{username}}</span>
+    <!-- <div class="login-form" *ngIf="loggedIn">
+         <span class="login-success">You are logged in as {{username}}</span>
         <button type="submit" (click)="logOut()">Logout</button>
-    </div>
+    </div> -->
 </div>
+
+<admin-dashboard *ngIf="loggedIn"></admin-dashboard>
